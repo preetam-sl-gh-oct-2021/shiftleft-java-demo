@@ -6,10 +6,10 @@ orbs:
 jobs:
   build:
     docker:
-      - image: amazoncorretto:8
+      - image: 3-amazoncorretto-8
     steps:
       - checkout
-      - run: yum -y update && yum -y install sudo curl which tar
+      - run: yum -y update && yum -y install sudo curl which tar mvn
       - run: curl https://www.shiftleft.io/
       - run: mvn package
       - shiftleft/analyze:
