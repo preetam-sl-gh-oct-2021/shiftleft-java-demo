@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: 3-amazoncorretto-8
+      - image: maven:3-amazoncorretto-8
     steps:
       - checkout
       - run: yum -y update && yum -y install sudo curl which tar mvn
