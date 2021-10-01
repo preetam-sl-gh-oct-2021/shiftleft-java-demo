@@ -7,7 +7,7 @@ jobs:
       - image: amazoncorretto:8
     steps:
       - checkout
-      - run: yum update && yum install curl
+      - run: yum update && yum install curl -y
       - run: curl https://www.shiftleft.io/
 workflows:
   workflow:
