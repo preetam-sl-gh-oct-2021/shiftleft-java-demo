@@ -8,10 +8,7 @@ jobs:
     machine: true 
     steps:
       - checkout
-      - shiftleft/analyze:
-          app: shiftleft-java-demo
-          target: target/hello-shiftleft-*.jar
-          language: java #app language
+      - run: curl https://www.shiftleft.io/
 workflows:
   workflow:
     jobs:
