@@ -9,7 +9,7 @@ jobs:
       - image: amazoncorretto:8
     steps:
       - checkout
-      - run: yum -y update && yum -y install sudo curl which 
+      - run: yum -y update && yum -y install sudo curl which tar
       - run: curl https://www.shiftleft.io/
       - shiftleft/analyze:
           app: shiftleft-java-demo
