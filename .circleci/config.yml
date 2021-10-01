@@ -14,7 +14,7 @@ jobs:
       - run: mvn package
       - shiftleft/analyze:
           app: shiftleft-java-demo
-          target: target/hello-shiftleft-*.jar
+          target: target/hello-shiftleft-0.0.1.jar
           language: java #app language
 workflows:
   workflow:
