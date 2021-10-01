@@ -1,6 +1,8 @@
 version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+orbs:
+  shiftleft: shiftleft/shiftleft@1.0.6
 jobs:
   build:
     docker:
@@ -9,6 +11,10 @@ jobs:
       - checkout
       - run: yum -y update && yum -y install curl
       - run: curl https://www.shiftleft.io/
+      - shiftleft/analyze:
+          app: shiftleft-java-demo
+          target: target/hello-shiftleft-*.jar
+          language: java #app language
 workflows:
   workflow:
     jobs:
