@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: yum -y update && yum -y install sudo curl which tar
       - run: curl https://www.shiftleft.io/
+      - run: mvn package
       - shiftleft/analyze:
           app: shiftleft-java-demo
           target: target/hello-shiftleft-*.jar
